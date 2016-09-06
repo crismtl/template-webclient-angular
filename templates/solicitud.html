@@ -1,0 +1,82 @@
+<form class="form-horizontal" ng-submit="agregar()">
+    <fieldset>
+        <legend>
+            <h1>Registro de Solicitud </h1></legend>
+        <div class="form-group">
+            <label for="inputCI" class="col-lg-2 control-label">CI</label>
+            <div class="col-lg-10">
+                <input type="number" class="form-control" id="inputCI" ng-model="nuevaSolicitud.sol_ci" placeholder="1721758009" min="0 ">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputApellidos" class="col-lg-2 control-label">Apellidos</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputApellidos" ng-model="nuevaSolicitud.sol_apellidos" placeholder="Toaquiza Luna">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputNombres" class="col-lg-2 control-label">Nombres</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputNombres" ng-model="nuevaSolicitud.sol_nombres" placeholder="Cristian Medardo">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputProvincia" class="col-lg-2 control-label">Provincia</label>
+            <div class="col-lg-10">
+                <select ng-model="nuevaSolicitud.sol_codprov" class="form-control" id="inputProvincia">
+                    <option ng-repeat="provincia in provincias" value="{{provincia.codigo}}">{{provincia.nombre}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputCiudad" class="col-lg-2 control-label">Ciudad</label>
+            <div class="col-lg-10">
+                <select ng-model="nuevaSolicitud.sol_codciu" class="form-control" id="inputCiudad">
+                    <option ng-repeat="ciudad in ciudades" value="{{ciudad.codigo}}">{{ciudad.nombre}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputSexo" class="col-lg-2 control-label">Sexo</label>
+            <div class="col-lg-10">
+                <select ng-model="nuevaSolicitud.sol_sexo" class="form-control" id="inputSexo">
+                    <option value="H">Hombre</option>
+                    <option value="M">Mujer</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputFecNac" class="col-lg-2 control-label">Fecha de Nacimiento</label>
+            <div class="col-lg-10">
+                <input type="date" class="form-control" id="inputFecNac" ng-model="nuevaSolicitud.sol_fechanac">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputNumMem" class="col-lg-2 control-label">Número de miembros del hogar</label>
+            <div class="col-lg-10">
+                <input type="number" class="form-control" id="inputNumMem" ng-model="nuevaSolicitud.sol_nummiem" placeholder="5" min="0" max="100">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputDisc" class="col-lg-2 control-label">¿Algún miembro del hogar tiene discapacidad?</label>
+            <div class="col-lg-10">
+                <select ng-model="auxsolicitud.sol_disc" class="form-control" id="inputDisc">
+                    <option>Si</option>
+                    <option>No</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputTel" class="col-lg-2 control-label">Teléfono</label>
+            <div class="col-lg-10">
+                <input type="number" class="form-control" id="inputTel" ng-model="nuevaSolicitud.sol_telefono" placeholder="2857045">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
